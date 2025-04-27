@@ -1,0 +1,106 @@
+:root {
+  --zinc50: #fafafa;
+  --zinc200: #e4e4e7;
+  --zinc400: #a1a1aa;
+  --zinc600: #52525b;
+  --zinc950: #09090b;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--zinc200);
+  color: var(--zinc950);
+}
+
+body.dark {
+  color: var(--zinc50);
+  background-color: var(--zinc950);
+}
+
+body.dark #date {
+  color: var(--zinc400);
+}
+
+body.dark .separador {
+  background-color: var(--zinc50);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 0.6rem;
+}
+
+.watches {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#date {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--zinc600);
+}
+
+.separador-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.separador {
+  background-color: var(--zinc950);
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+}
+
+#hours, #minute, #second {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+#hours, #minute, #second, #date {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.fade {
+  transition: opacity 0.3s ease;
+  scale: 0.95;
+  opacity: 0.5;
+}
+
+
+.normal {
+  opacity: 1;
+  scale: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+@media screen and (width >= 48rem) {
+  .container {
+    gap: 0.875rem;
+  }
+
+  #date {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #hours, #minute, #second {
+    font-size: 5rem;
+  }
+}
